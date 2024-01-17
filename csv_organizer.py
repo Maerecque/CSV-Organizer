@@ -79,7 +79,7 @@ def hash_add_function(csv_filename: str, hash_field: str) -> None:
         image_name = os.path.basename(file)
         if not any(image_name in row for row in csv_list):
             # If it is missing, add it to the csv list
-            amount_of_columns = len(csv_list[0]) - 1
+            amount_of_columns = len(columns_names)
             csv_list.append([image_name] + [""] * amount_of_columns)
 
     # Go over every image in the csv list and create unique attributes for each image
